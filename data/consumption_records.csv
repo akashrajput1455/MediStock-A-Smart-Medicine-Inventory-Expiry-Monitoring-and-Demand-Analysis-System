@@ -1,0 +1,49 @@
+record_id,medicine_name,batch_id,consumption_date,quantity_consumed,notes,created_at
+CON-1001,Paracetamol 500mg,BAT-1001,2026-09-09,18,OPD Fever Clinic,2026-09-09
+CON-1002,Amoxicillin 500mg,BAT-1003,2026-09-11,12,Dental OPD,2026-09-11
+CON-1003,Metformin 500mg,BAT-1005,2026-09-13,30,Diabetic Clinic Monthly Refills,2026-09-13
+CON-1004,Pantoprazole 40mg,BAT-1007,2026-09-14,15,Gastroenterology OPD,2026-09-14
+CON-1005,Cetirizine 10mg,BAT-1009,2026-09-16,20,Allergy Consultations,2026-09-16
+CON-1006,Paracetamol 500mg,BAT-1001,2026-09-17,25,Emergency Triage Dispensing,2026-09-17
+CON-1007,Oral Rehydration Salts (ORS),BAT-1018,2026-09-18,10,Pediatric Dehydration Cases,2026-09-18
+CON-1008,Atorvastatin 20mg,BAT-1011,2026-09-20,15,Cardiology Routine Refills,2026-09-20
+CON-1009,Paracetamol 500mg,BAT-1001,2026-09-22,22,General Medicine OPD,2026-09-22
+CON-1010,Amoxicillin 500mg,BAT-1003,2026-09-23,15,ENT Clinic Prescriptions,2026-09-23
+CON-1011,Metformin 500mg,BAT-1005,2026-09-24,35,Endocrinology Follow-ups,2026-09-24
+CON-1012,Amlodipine 5mg,BAT-1006,2026-09-25,20,Hypertension Management,2026-09-25
+CON-1013,Vitamin C 500mg Chewable,BAT-1014,2026-09-26,40,Preventive Care Wellness Camp,2026-09-26
+CON-1014,Ibuprofen 400mg,BAT-1012,2026-09-27,18,Orthopedic OPD Joint Pain,2026-09-27
+CON-1015,Salbutamol Inhaler 100mcg,BAT-1016,2026-09-29,4,Pulmonology Asthma Clinic,2026-09-29
+CON-1016,Pantoprazole 40mg,BAT-1007,2026-09-30,22,Inpatient Ward Supply,2026-09-30
+CON-1017,Paracetamol 500mg,BAT-1001,2026-10-02,30,OPD Fever Season Peak,2026-10-02
+CON-1018,Montelukast 10mg,BAT-1008,2026-10-03,14,Pediatric Asthma & Allergies,2026-10-03
+CON-1019,Metformin 500mg,BAT-1005,2026-10-04,40,Community Diabetic Camp,2026-10-04
+CON-1020,Oral Rehydration Salts (ORS),BAT-1018,2026-10-05,25,Acute Diarrhea Inpatients,2026-10-05
+CON-1021,Ciprofloxacin 500mg,BAT-1013,2026-10-06,16,UTI Clinic Dispensing,2026-10-06
+CON-1022,Calcium + Vitamin D3 Tablets,BAT-1020,2026-10-07,20,Geriatric Care Clinic,2026-10-07
+CON-1023,Ondansetron 4mg,BAT-1019,2026-10-08,12,Post-Op Nausea Protocol,2026-10-08
+CON-1024,Paracetamol 500mg,BAT-1001,2026-10-10,28,Emergency Room Supply,2026-10-10
+CON-1025,Amoxicillin 500mg,BAT-1003,2026-10-11,18,Bacterial Respiratory Infection,2026-10-11
+CON-1026,Atorvastatin 20mg,BAT-1011,2026-10-12,25,Cardiology Long-term Dispensary,2026-10-12
+CON-1027,Cetirizine 10mg,BAT-1009,2026-10-13,30,Seasonal Rhinitis Clinic,2026-10-13
+CON-1028,Pantoprazole 40mg,BAT-1007,2026-10-14,28,General Ward Stock,2026-10-14
+CON-1029,Metformin 500mg,BAT-1005,2026-10-15,45,Endocrine Clinic Dispensing,2026-10-15
+CON-1030,Paracetamol 500mg,BAT-1001,2026-10-16,32,Viral Outbreak Screening,2026-10-16
+CON-1031,Glimepiride 2mg,BAT-1017,2026-10-17,18,Diabetic Glycemic Control,2026-10-17
+CON-1032,Vitamin C 500mg Chewable,BAT-1014,2026-10-18,50,Wellness Immunity Drive,2026-10-18
+CON-1033,Ibuprofen 400mg,BAT-1012,2026-10-19,22,Sports Injury Day Clinic,2026-10-19
+CON-1034,Amlodipine 5mg,BAT-1006,2026-10-20,24,Cardiac Care OPD,2026-10-20
+CON-1035,Paracetamol 500mg,BAT-1001,2026-10-22,35,OPD Primary Care,2026-10-22
+CON-1036,Amoxicillin 500mg,BAT-1003,2026-10-23,14,Pediatric Clinic,2026-10-23
+CON-1037,Omeprazole 20mg,BAT-1015,2026-10-24,15,Gastroenterology Consultation,2026-10-24
+CON-1038,Oral Rehydration Salts (ORS),BAT-1018,2026-10-25,30,Gastroenteritis Emergency Care,2026-10-25
+CON-1039,Metformin 500mg,BAT-1005,2026-10-26,50,Monthly Diabetes Prescription Refills,2026-10-26
+CON-1040,Pantoprazole 40mg,BAT-1007,2026-10-26,30,Surgical Pre-op Prophylaxis,2026-10-26
+CON-1041,Montelukast 10mg,BAT-1008,2026-10-27,16,Respiratory Care Center,2026-10-27
+CON-1042,Paracetamol 500mg,BAT-1001,2026-10-28,40,Emergency Department Walk-ins,2026-10-28
+CON-1043,Calcium + Vitamin D3 Tablets,BAT-1020,2026-10-28,25,Antenatal & Postnatal OPD,2026-10-28
+CON-1044,Salbutamol Inhaler 100mcg,BAT-1016,2026-10-29,6,Emergency Bronchospasm Relief,2026-10-29
+CON-1045,Atorvastatin 20mg,BAT-1011,2026-10-29,30,Cardiac Wellness Registry,2026-10-29
+CON-1046,Ondansetron 4mg,BAT-1019,2026-10-30,10,Daycare Chemotherapy Antiemetic,2026-10-30
+CON-1047,Cetirizine 10mg,BAT-1009,2026-10-30,25,OPD Allergy Clinic,2026-10-30
+CON-1048,Paracetamol 500mg,BAT-1001,2026-10-31,25,Today OPD Fever Triage,2026-10-31

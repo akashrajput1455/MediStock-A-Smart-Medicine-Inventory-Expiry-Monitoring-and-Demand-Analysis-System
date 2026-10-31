@@ -1,0 +1,6 @@
+{
+  "name": "MediStock",
+  "description": "Smart Medicine Inventory, Expiry Monitoring and Demand Analysis System for small hospital pharmacies and medical stores.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

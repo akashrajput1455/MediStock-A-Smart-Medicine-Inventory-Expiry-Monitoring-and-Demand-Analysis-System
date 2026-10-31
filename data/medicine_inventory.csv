@@ -1,0 +1,21 @@
+batch_id,medicine_name,category,batch_number,manufacturer,quantity,min_stock_level,unit_price,mfg_date,expiry_date,created_at
+BAT-1001,Paracetamol 500mg,Analgesic & Antipyretic,PCM-2024-A1,Cipla Pharmaceuticals,180,100,1.5,2024-11-30,2026-11-06,2026-09-01
+BAT-1002,Paracetamol 500mg,Analgesic & Antipyretic,PCM-2024-B2,Cipla Pharmaceuticals,600,150,1.65,2026-09-16,2028-04-23,2026-09-21
+BAT-1003,Amoxicillin 500mg,Antibiotic,AMX-8901,Sun Pharma Ltd,25,80,6.8,2026-01-04,2027-06-08,2026-09-01
+BAT-1004,Azithromycin 500mg,Antibiotic,AZM-7712,Dr. Reddy's Laboratories,40,50,14.5,2024-10-11,2026-10-11,2026-09-01
+BAT-1005,Metformin 500mg,Antidiabetic,MET-4430,USV Pvt Ltd,450,120,2.2,2026-07-03,2027-12-05,2026-09-01
+BAT-1006,Amlodipine 5mg,Cardiovascular,AML-3319,Torrent Pharma,90,100,2.9,2024-12-20,2026-11-21,2026-09-01
+BAT-1007,Pantoprazole 40mg,Gastrointestinal,PAN-9021,Alkem Laboratories,320,80,4.5,2026-07-23,2028-02-23,2026-09-01
+BAT-1008,Montelukast 10mg,Respiratory,MON-6102,Mankind Pharma,18,60,8.0,2026-05-04,2027-09-16,2026-09-01
+BAT-1009,Cetirizine 10mg,Antihistamine,CET-1120,Dr. Reddy's Laboratories,280,70,1.8,2026-08-02,2027-12-25,2026-09-01
+BAT-1010,Atorvastatin 20mg,Cardiovascular,ATV-5541,Zydus Cadila,30,50,9.2,2024-09-11,2026-10-26,2026-09-01
+BAT-1011,Atorvastatin 20mg,Cardiovascular,ATV-9902,Zydus Cadila,210,60,9.5,2026-09-01,2028-03-14,2026-09-11
+BAT-1012,Ibuprofen 400mg,Analgesic & Antipyretic,IBU-3401,Abbott India,75,80,2.4,2024-12-10,2026-11-14,2026-09-01
+BAT-1013,Ciprofloxacin 500mg,Antibiotic,CIP-4210,Ranbaxy / Sun Pharma,160,50,7.1,2026-07-13,2027-11-25,2026-09-01
+BAT-1014,Vitamin C 500mg Chewable,Vitamins & Supplements,VTC-8822,GlaxoSmithKline (GSK),520,150,1.2,2026-08-02,2028-01-24,2026-09-01
+BAT-1015,Omeprazole 20mg,Gastrointestinal,OMP-1190,Dr. Reddy's Laboratories,15,50,3.4,2026-02-23,2027-05-09,2026-09-01
+BAT-1016,Salbutamol Inhaler 100mcg,Respiratory,SLB-7004,Cipla Pharmaceuticals,42,25,115.0,2026-06-13,2027-10-26,2026-09-01
+BAT-1017,Glimepiride 2mg,Antidiabetic,GLM-4011,Sanofi India,65,60,4.1,2025-01-09,2026-11-28,2026-09-01
+BAT-1018,Oral Rehydration Salts (ORS),Emergency & Fluids,ORS-2918,FDC Limited,380,100,18.0,2026-07-23,2028-06-02,2026-09-01
+BAT-1019,Ondansetron 4mg,Gastrointestinal,OND-8820,GlaxoSmithKline (GSK),8,40,5.2,2026-06-03,2027-09-16,2026-09-01
+BAT-1020,Calcium + Vitamin D3 Tablets,Vitamins & Supplements,CAL-9912,Pfizer Limited,230,80,6.5,2026-07-13,2028-01-14,2026-09-01
