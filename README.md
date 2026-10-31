@@ -168,49 +168,59 @@ MediStock follows a clean, modular 3-tier architecture:
 ## 10. Explanation of Inventory Calculations
 
 ### 1. Available Stock Calculation
-$$\text{Available Stock} = \sum_{\text{batch} \in \text{Non-Expired Batches}} \text{Batch Quantity}$$
-*Expired batches are explicitly excluded ($\text{Quantity} = 0$ for routine dispensing).*
+$$\text{Available Stock} = \sum_{i \in \text{Non-Expired}} \text{Quantity}_i$$
+
+*Expired batches are strictly excluded ($\text{Quantity} = 0$ for regular dispensing).*
+
+```text
+Available Stock = Sum of quantities of all valid batches where (Expiry Date >= Current Date)
+```
 
 ### 2. Expiry Days Calculation
 $$\text{Days Remaining} = \text{Expiry Date} - \text{Current Date}$$
-- If $\text{Days Remaining} < 0$: Status is **Expired**.
-- If $0 \le \text{Days Remaining} \le \text{Threshold}$ (default 30): Status is **Expiring Soon**.
-- If $\text{Days Remaining} > \text{Threshold}$: Status is **Valid**.
+
+- If $\text{Days Remaining} < 0$: Status is **Expired** (automatic quarantine).
+- If $0 \le \text{Days Remaining} \le \text{Threshold}$ (default 30 days): Status is **Expiring Soon**.
+- If $\text{Days Remaining} > \text{Threshold}$: Status is **Valid** (safe for routine use).
 
 ### 3. Low-Stock Condition
-A medicine is flagged as **Low Stock** when:
-$$\text{Available Stock} < \text{Minimum Stock Level}$$
+A medicine is flagged as **Low Stock** when total non-expired stock drops below the minimum safety threshold:
+
 $$\text{Shortage} = \max(0, \, \text{Minimum Stock Level} - \text{Available Stock})$$
 
 ---
 
 ## 11. Explanation of the Demand-Estimation Algorithm
-Rather than an unexplainable machine learning black box, MediStock employs an explainable, deterministic statistical algorithm:
+Rather than an unexplainable machine-learning black box, MediStock employs an explainable, deterministic statistical algorithm:
 
-1. **Analysis Window Selection**:
-   Select historical window of $D_{\text{hist}}$ days (default: 30 days).
+### Step 1: Historical Window Selection
+Select a historical analysis window of $D_{\text{hist}}$ days (default: 30 days):
+$$\text{Start Date} = \text{Current Date} - D_{\text{hist}}$$
 
-2. **Total Quantity Consumed**:
-   $$Q_{\text{consumed}} = \sum_{t = \text{today} - D_{\text{hist}}}^{\text{today}} Q_t$$
-   *(where $Q_t$ is the units consumed on day $t$)*
+### Step 2: Total Quantity Consumed
+Sum of all units dispensed during the window:
+$$Q_{\text{consumed}} = \sum_{t = 1}^{N} \text{Units Consumed}_t$$
 
-3. **Average Daily Consumption (ADC)**:
-   $$\text{ADC} = \frac{Q_{\text{consumed}}}{D_{\text{hist}}}$$
+### Step 3: Average Daily Consumption (ADC)
+$$\text{ADC} = \frac{Q_{\text{consumed}}}{D_{\text{hist}}}$$
 
-4. **Estimated Monthly Demand**:
-   $$\text{Monthly Demand} = \text{ADC} \times 30$$
+### Step 4: Estimated Monthly Demand
+$$\text{Monthly Demand} = \text{ADC} \times 30$$
 
-5. **Stock Coverage (Estimated Days Remaining)**:
-   $$\text{Coverage Days} = \begin{cases} 
-   \frac{\text{Available Stock}}{\text{ADC}} & \text{if } \text{ADC} > 0 \\
-   999 \text{ (Adequate)} & \text{if } \text{ADC} = 0 \text{ and } \text{Available Stock} > 0 \\
-   0 & \text{if } \text{ADC} = 0 \text{ and } \text{Available Stock} = 0
-   \end{cases}$$
+### Step 5: Stock Coverage (Days Remaining)
+$$\text{Coverage Days} = \frac{\text{Available Stock}}{\text{ADC}} \quad (\text{for } \text{ADC} > 0)$$
 
-6. **Suggested Reorder Quantity**:
-   Given a target coverage buffer of $D_{\text{cov}}$ days (default: 30 days):
-   $$\text{Required Stock} = \lceil \text{ADC} \times D_{\text{cov}} \rceil$$
-   $$\text{Suggested Reorder} = \max\left(0, \, \text{Required Stock} - \text{Available Stock}\right)$$
+**Boundary Conditions**:
+- **Case 1 ($\text{ADC} > 0$):** $\text{Coverage Days} = \frac{\text{Available Stock}}{\text{ADC}}$
+- **Case 2 ($\text{ADC} = 0$ and $\text{Available Stock} > 0$):** $\text{Coverage Days} = 999$ *(Adequate stock, no recent demand)*
+- **Case 3 ($\text{ADC} = 0$ and $\text{Available Stock} = 0$):** $\text{Coverage Days} = 0$ *(No stock and no demand recorded)*
+
+### Step 6: Suggested Reorder Quantity
+For a targeted safety buffer of $D_{\text{cov}}$ days (default: 30 days):
+
+$$\text{Required Stock} = \lceil \text{ADC} \times D_{\text{cov}} \rceil$$
+
+$$\text{Suggested Reorder} = \max(0, \, \text{Required Stock} - \text{Available Stock})$$
 
 ---
 
