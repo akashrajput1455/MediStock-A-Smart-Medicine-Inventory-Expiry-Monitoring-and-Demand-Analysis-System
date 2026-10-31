@@ -168,11 +168,11 @@ MediStock follows a clean, modular 3-tier architecture:
 ## 10. Explanation of Inventory Calculations
 
 ### 1. Available Stock Calculation
-$$\text{Available Stock} = \sum_{\text{batch} \in \text{Non-Expired Batches}} \text{batch.quantity}$$
-*Expired batches are explicitly excluded ($\text{quantity} = 0$ for routine dispensing).*
+$$\text{Available Stock} = \sum_{\text{batch} \in \text{Non-Expired Batches}} \text{Batch Quantity}$$
+*Expired batches are explicitly excluded ($\text{Quantity} = 0$ for routine dispensing).*
 
 ### 2. Expiry Days Calculation
-$$\text{Days Remaining} = \text{expiry\_date} - \text{today}$$
+$$\text{Days Remaining} = \text{Expiry Date} - \text{Current Date}$$
 - If $\text{Days Remaining} < 0$: Status is **Expired**.
 - If $0 \le \text{Days Remaining} \le \text{Threshold}$ (default 30): Status is **Expiring Soon**.
 - If $\text{Days Remaining} > \text{Threshold}$: Status is **Valid**.
@@ -191,7 +191,8 @@ Rather than an unexplainable machine learning black box, MediStock employs an ex
    Select historical window of $D_{\text{hist}}$ days (default: 30 days).
 
 2. **Total Quantity Consumed**:
-   $$Q_{\text{consumed}} = \sum_{t = \text{today} - D_{\text{hist}}}^{\text{today}} \text{quantity\_consumed}_t$$
+   $$Q_{\text{consumed}} = \sum_{t = \text{today} - D_{\text{hist}}}^{\text{today}} Q_t$$
+   *(where $Q_t$ is the units consumed on day $t$)*
 
 3. **Average Daily Consumption (ADC)**:
    $$\text{ADC} = \frac{Q_{\text{consumed}}}{D_{\text{hist}}}$$
